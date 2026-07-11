@@ -84,6 +84,10 @@ mvn clean install
 ```bash
 java -jar infrastructure/target/infrastructure-*.jar
 ```
+o
+```bash
+mvn spring-boot:run -pl infrastructure
+```
 
 Swagger UI is available at `http://localhost:8080/swagger-ui/index.html` once the application is running.
 

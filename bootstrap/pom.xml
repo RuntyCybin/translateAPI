@@ -3,7 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>com.translateapi</groupId>
         <artifactId>translateAPI</artifactId>
@@ -11,27 +10,40 @@
     </parent>
 
     <groupId>com.translateapi</groupId>
-    <artifactId>application</artifactId>
+    <artifactId>bootstrap</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <dependencies>
+        <!-- Adapters -->
         <dependency>
             <groupId>com.translateapi</groupId>
-            <artifactId>domain</artifactId>
+            <artifactId>adapter-in-web</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-        </dependency>
-
+        <!-- External dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
     </dependencies>
+
+    <build>
+        <finalName>translate-api</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.translateapi.TranslateApiLauncher</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
