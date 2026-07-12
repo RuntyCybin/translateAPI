@@ -3,7 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>com.translateapi</groupId>
         <artifactId>translateAPI</artifactId>
@@ -11,26 +10,31 @@
     </parent>
 
     <groupId>com.translateapi</groupId>
-    <artifactId>application</artifactId>
+    <artifactId>adapter-out-persistence-jpa</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <description>
-        Casos de uso (puertos de entrada) y su orquestación (AccountService),
-        más el puerto de salida AccountRepository. Depende de domain y de
-        spring-context únicamente (para @Service): nada de spring-web ni
-        de spring-data-jpa puede colarse aquí sin que el build lo note.
+        Adaptador de salida real para el puerto AccountRepository, respaldado
+        por Spring Data JPA / PostgreSQL. Depende de application; el mapeo
+        entre Account (dominio) y AccountJpaEntity vive solo aquí.
     </description>
 
     <dependencies>
         <dependency>
             <groupId>com.translateapi</groupId>
-            <artifactId>domain</artifactId>
+            <artifactId>application</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -39,6 +43,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- H2 solo para @DataJpaTest de este módulo, sin depender de un
+             PostgreSQL real. -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 </project>

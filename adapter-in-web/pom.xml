@@ -14,6 +14,12 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <description>
+        Adaptador de entrada REST. Depende de application (los puertos de
+        entrada) y trae spring-boot-starter-web + validation. No conoce
+        domain directamente ni cómo se persisten las cuentas.
+    </description>
+
     <dependencies>
         <dependency>
             <groupId>com.cybindev</groupId>

@@ -15,4 +15,23 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <description>
+        Modelo de dominio puro. Deliberadamente NO depende de Spring, JPA
+        ni de ningún otro framework: solo JDK. Si algún día alguien intenta
+        agregar aquí un import de org.springframework.* o jakarta.persistence.*,
+        este módulo simplemente no compila, porque esas librerías no están
+        en su classpath.
+    </description>
+
+    <dependencies>
+        <!-- Únicamente en scope test: JUnit 5 + AssertJ + Mockito para
+             probar las invariantes de negocio de forma aislada. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
 </project>

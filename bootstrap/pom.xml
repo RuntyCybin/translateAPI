@@ -14,11 +14,22 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <description>
+        Único módulo que sabe que la app es un Spring Boot app: tiene el
+        @SpringBootApplication, el application.yml y ata todos los
+        adaptadores entre sí. Es el "composition root".
+    </description>
+
     <dependencies>
         <!-- Adapters -->
         <dependency>
             <groupId>com.translateapi</groupId>
             <artifactId>adapter-in-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.translateapi</groupId>
+            <artifactId>adapter-out-persistence-jpa</artifactId>
         </dependency>
 
         <!-- External dependencies -->
@@ -27,6 +38,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure</artifactId>
