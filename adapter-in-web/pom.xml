@@ -22,7 +22,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.cybindev</groupId>
+            <groupId>com.translateapi</groupId>
             <artifactId>application</artifactId>
         </dependency>
 
