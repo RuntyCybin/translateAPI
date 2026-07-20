@@ -1,6 +1,7 @@
 # translateAPI
 
-REST API for translating text from Estonian to English, built with **Java 21** and **Spring Boot 3**, following **Hexagonal Architecture** (Ports & Adapters).
+REST API for translating text from Estonian to English, built with **Java 21** and **Spring Boot 3**, 
+following **Hexagonal Architecture** (Ports & Adapters).
 
 ---
 
@@ -133,3 +134,14 @@ translateAPI/
             │   └── TranslationHttpAdapter.java
             └── out/
 ```
+---
+
+## Autentication Data
+
+### `Cliente OAuth`
+
+**ID Cliente:** `1035640302874-enf5tst5pg9clcc8fpcl6qqke5h7s5ti.apps.googleusercontent.com`
+
+Se puede acceder al ID de cliente desde: **Google Auth Platform:** -> **Clientes** 
+
+---
